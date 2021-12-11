@@ -16,15 +16,38 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = prompt("Which will you choose?", "Rock, Paper, or Scissors?").toLowerCase();
-    const computerSelection = computerPlay;
-    rock > scissors;
-    
-    if (playerSelection === computerSelection) {
-        return("It's a tie");
-    } else if (playerSelection < computerSelection) {
-        return("Try Again");
-    }else {
-        return("You've won!");
+    computerSelection = computerPlay;
+
+    if (playerSelection === "rock") {
+        if (computerSelection === "scissors") {
+            return "You Win!";
+        }else if (computerSelection === "paper") {
+            return "Try Again!";
+        }else if (computerSelection === playerSelection) {
+            return "It's A Tie!";
+        }
     }
-    
+    if (playerSelection === "scissors") {
+        if (computerSelection === "paper") {
+            return "You Win!";
+        }
+        if (computerSelection === "rock") {
+            return "You Lose!";
+        }
+        if (computerSelection === playerSelection) {
+            return "It's A Tie!";
+        }
+    }
+    if (playerSelection === "paper") {
+        if (computerSelection === "rock") {
+            return "You Win!";
+        }
+        if (computerSelection === "scissors") {
+            return "You Lose!";
+        }
+        if (computerSelection === playerSelection) {
+            return "It's A Tie!";
+        }
+    }
+
 }
