@@ -17,85 +17,64 @@ function playRound(playerSelection, computerSelection) {
     computerSelection = computerPlay();
     if (playerSelection === "rock") {
         if (computerSelection === "scissors") {
-            return ("You Win!");
+            console.log("You Win!");
+            return ++playerPoints;
         }
         if (computerSelection === "paper") {
-            return ("You Lose!");
+            console.log("You Lose!");
+            return ++computerPoints;
         }
         if (computerSelection === playerSelection) {
-            return ("It's A Tie!");
+            console.log("It's A Tie!");
         }
     }
     if (playerSelection === "scissors") {
         if (computerSelection === "paper") {
-            return "You Win!";
+            console.log("You Win!");
+            return ++playerPoints;
         }
         if (computerSelection === "rock") {
-            return "You Lose!";
+            console.log("You Lose!");
+            return ++computerPoints;
         }
         if (computerSelection === playerSelection) {
-            return "It's A Tie!";
+            console.log("It's A Tie!");
         }
     }
     if (playerSelection === "paper") {
         if (computerSelection === "rock") {
-            return "You Win!";
+            console.log("You Win!");
+            return ++playerPoints;
         }
         if (computerSelection === "scissors") {
-            return "You Lose!";
+            console.log("You Lose!");
+            return ++computerPoints;
         }
         if (computerSelection === playerSelection) {
-            return "It's A Tie!";
+            console.log("It's A Tie!");
         }
     }
 
 }
 
 /*create a five round game, picking the final winner out of who won most rounds */ 
-
+let playerPoints = 0
+let computerPoints = 0
 function game() {
-    let playerPoints = 0
-    let computerPoints = 0
     playRound(playerSelection, computerSelection);
-        if (playRound = "You Win!") {
-            playerPoints++ 
-        }
-        if (playRound = "You Lose") {
-            computerPoints++
-        }
+    console.log(`Player: ${playerPoints} Computer: ${computerPoints}`)
     playRound(playerSelection, computerSelection);
-        if (playRound = "You Win!") {
-            playerPoints++ 
-        }
-        if (playRound = "You Lose") {
-            computerPoints++
-        }
+    console.log(`Player: ${playerPoints} Computer: ${computerPoints}`)
     playRound(playerSelection, computerSelection);
-        if (playRound = "You Win!") {
-             playerPoints++ 
-    }
-        if (playRound = "You Lose") {
-            computerPoints++
-        }
+    console.log(`Player: ${playerPoints} Computer: ${computerPoints}`)
     playRound(playerSelection, computerSelection);
-        if (playRound = "You Win!") {
-            playerPoints++ 
-        }
-        if (playRound = "You Lose") {
-            computerPoints++
-        }
+    console.log(`Player: ${playerPoints} Computer: ${computerPoints}`)
     playRound(playerSelection, computerSelection);
-        if (playRound = "You Win!") {
-            playerPoints++ 
-        }
-        if (playRound = "You Lose") {
-            computerPoints++
-        }
-
+    console.log(`Player: ${playerPoints} Computer: ${computerPoints}`)
     if (playerPoints > computerPoints) {
         return "Congrats! You win!"
     }
     if (computerPoints > playerPoints) {
-        return "Please try again!"
+        return "You Lose!Please try again!"
     }
 }
