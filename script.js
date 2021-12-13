@@ -10,9 +10,10 @@ function computerPlay() {
 }
 let playerChoice = prompt("Which will you choose?", "rock, paper, or scissors?").toLowerCase();
 let playerSelection = playerChoice
-let computerSelection = computerPlay();
+let computerSelection; 
 /* asks for players choice, compares it to random choice, and decides who wins the round */
 function playRound(playerSelection, computerSelection) {
+    computerSelection = computerPlay();
     if (playerSelection === "rock") {
         if (computerSelection === "scissors") {
             return ("You Win!");
