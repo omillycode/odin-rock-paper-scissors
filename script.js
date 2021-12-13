@@ -49,3 +49,23 @@ function playRound(playerSelection, computerSelection) {
     }
 
 }
+
+/*create a five round game, picking the final winner out of who won most rounds */ 
+
+function game() {
+    let playerPoints = 0
+    let computerPoints = 0
+    playRound(playerSelection, computerSelection);
+    if (playRound = "You Win!") {
+        playerPoints++ 
+    }
+    if (playRound = "You Lose") {
+        computerPoints++
+    }
+    if (playerPoints >= 5) {
+        return "Congrats! You win!"
+    }
+    if (computerPoints >= 5) {
+        return "Please try again!"
+    }
+}
