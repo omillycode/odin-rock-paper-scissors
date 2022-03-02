@@ -34,12 +34,12 @@ function playRound(playerSelection, computerSelection) {
     computerSelection = computerPlay();
     if (playerSelection === "rock") {
         if (computerSelection === "scissors") {
-            return ++playerPoints;
             theResult.textContent = `You Win! You:${playerPoints}, PC:${computerPoints}`;
+            return ++playerPoints;
         }
         if (computerSelection === "paper") {
-            return ++computerPoints;
             theResult.textContent = `You Lose! You:${playerPoints}, PC:${computerPoints}`;
+            return ++computerPoints;
         }
         if (computerSelection === playerSelection) {
             theResult.textContent = "It's a tie";
@@ -47,12 +47,12 @@ function playRound(playerSelection, computerSelection) {
     }
     if (playerSelection === "scissors") {
         if (computerSelection === "paper") {
-            return ++playerPoints;
             theResult.textContent = `You Win! You:${playerPoints}, PC:${computerPoints}`;
+            return ++playerPoints;
         }
         if (computerSelection === "rock") {
-            return ++computerPoints;
             theResult.textContent = `You Lose! You:${playerPoints}, PC:${computerPoints}`;
+            return ++computerPoints;
         }
         if (computerSelection === playerSelection) {
             theResult.textContent = "It's a tie";
@@ -60,12 +60,12 @@ function playRound(playerSelection, computerSelection) {
     }
     if (playerSelection === "paper") {
         if (computerSelection === "rock") {
-            return ++playerPoints;
             theResult.textContent = `You Win! You:${playerPoints}, PC:${computerPoints}`;
+            return ++playerPoints;
         }
         if (computerSelection === "scissors") {
-            return ++computerPoints;
             theResult.textContent = `You Lose! You:${playerPoints}, PC:${computerPoints}`;
+            return ++computerPoints;
         }
         if (computerSelection === playerSelection) {
             theResult.textContent = "It's a tie";
