@@ -22,49 +22,57 @@ playerSelectScissors.addEventListener('click', function() { playRound("scissors"
 let playerPoints = 0
 let computerPoints = 0
 
+const scoreDiv = document.createElement('div')
+const theResult = document.createElement('p')
+const mainPage = document.getElementById('mainPage')
+mainPage.appendChild(scoreDiv)
+scoreDiv.appendChild(theResult)
+
+
 /* gets players choice, compares it to random choice, and decides who wins the round */
 function playRound(playerSelection, computerSelection) {
     computerSelection = computerPlay();
     if (playerSelection === "rock") {
         if (computerSelection === "scissors") {
-            console.log("You Win!");
+            theResult.textContent = "You Win!";
             return ++playerPoints;
         }
         if (computerSelection === "paper") {
-            console.log("You Lose!");
+            theResult.textContent = "You Lose!";
             return ++computerPoints;
         }
         if (computerSelection === playerSelection) {
-            console.log("It's A Tie!");
+            theResult.textContent = "It's a tie";
         }
     }
     if (playerSelection === "scissors") {
         if (computerSelection === "paper") {
-            console.log("You Win!");
+            theResult.textContent = "You Win!";
             return ++playerPoints;
         }
         if (computerSelection === "rock") {
-            console.log("You Lose!");
+            theResult.textContent = "You Lose!";
             return ++computerPoints;
         }
         if (computerSelection === playerSelection) {
-            console.log("It's A Tie!");
+            theResult.textContent = "It's a tie";
         }
     }
     if (playerSelection === "paper") {
         if (computerSelection === "rock") {
-            console.log("You Win!");
+            theResult.textContent = "You Win!";
             return ++playerPoints;
         }
         if (computerSelection === "scissors") {
-            console.log("You Lose!");
+            theResult.textContent = "You Lose!";
             return ++computerPoints;
         }
         if (computerSelection === playerSelection) {
-            console.log("It's A Tie!");
+            theResult.textContent = "It's a tie";
         }
     }
 
 }
+
 
 
