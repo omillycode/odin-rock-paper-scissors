@@ -1,4 +1,4 @@
-/* choose from either rock, paper, or scissors randomly */
+/* chooses from either rock, paper, or scissors randomly */
 function computerPlay() {
     let choices = [
        "rock",
@@ -10,10 +10,20 @@ function computerPlay() {
 }
 let computerSelection; 
 let playerSelection;
-/* asks for players choice, compares it to random choice, and decides who wins the round */
+
+let playerSelectRock = document.querySelector('#rock')
+let playerSelectScissors = document.querySelector('#scissors')
+let playerSelectPaper = document.querySelector('#paper')
+
+playerSelectRock.addEventListener('click', function() {playRound("rock", computerSelection);})
+playerSelectPaper.addEventListener('click', function() {playRound("paper", computerSelection);})
+playerSelectScissors.addEventListener('click', function() { playRound("scissors", computerSelection);});
+
+let playerPoints = 0
+let computerPoints = 0
+
+/* gets players choice, compares it to random choice, and decides who wins the round */
 function playRound(playerSelection, computerSelection) {
-    let playerChoice = prompt("Which will you choose?", "rock, paper, or scissors?").toLowerCase();
-    playerSelection = playerChoice;
     computerSelection = computerPlay();
     if (playerSelection === "rock") {
         if (computerSelection === "scissors") {
@@ -57,24 +67,4 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-/*create a five round game, picking the final winner out of who won most rounds */ 
-let playerPoints = 0
-let computerPoints = 0
-function game() {
-    playRound(playerSelection, computerSelection);
-    console.log(`Player: ${playerPoints} Computer: ${computerPoints}`)
-    playRound(playerSelection, computerSelection);
-    console.log(`Player: ${playerPoints} Computer: ${computerPoints}`)
-    playRound(playerSelection, computerSelection);
-    console.log(`Player: ${playerPoints} Computer: ${computerPoints}`)
-    playRound(playerSelection, computerSelection);
-    console.log(`Player: ${playerPoints} Computer: ${computerPoints}`)
-    playRound(playerSelection, computerSelection);
-    console.log(`Player: ${playerPoints} Computer: ${computerPoints}`)
-    if (playerPoints > computerPoints) {
-        return "Congrats! You win!"
-    }
-    if (computerPoints > playerPoints) {
-        return "You Lose!Please try again!"
-    }
-}
+
