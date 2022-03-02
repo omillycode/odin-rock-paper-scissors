@@ -34,12 +34,12 @@ function playRound(playerSelection, computerSelection) {
     computerSelection = computerPlay();
     if (playerSelection === "rock") {
         if (computerSelection === "scissors") {
-            theResult.textContent = "You Win!";
             return ++playerPoints;
+            theResult.textContent = `You Win! You:${playerPoints}, PC:${computerPoints}`;
         }
         if (computerSelection === "paper") {
-            theResult.textContent = "You Lose!";
             return ++computerPoints;
+            theResult.textContent = `You Lose! You:${playerPoints}, PC:${computerPoints}`;
         }
         if (computerSelection === playerSelection) {
             theResult.textContent = "It's a tie";
@@ -47,12 +47,12 @@ function playRound(playerSelection, computerSelection) {
     }
     if (playerSelection === "scissors") {
         if (computerSelection === "paper") {
-            theResult.textContent = "You Win!";
             return ++playerPoints;
+            theResult.textContent = `You Win! You:${playerPoints}, PC:${computerPoints}`;
         }
         if (computerSelection === "rock") {
-            theResult.textContent = "You Lose!";
             return ++computerPoints;
+            theResult.textContent = `You Lose! You:${playerPoints}, PC:${computerPoints}`;
         }
         if (computerSelection === playerSelection) {
             theResult.textContent = "It's a tie";
@@ -60,18 +60,24 @@ function playRound(playerSelection, computerSelection) {
     }
     if (playerSelection === "paper") {
         if (computerSelection === "rock") {
-            theResult.textContent = "You Win!";
             return ++playerPoints;
+            theResult.textContent = `You Win! You:${playerPoints}, PC:${computerPoints}`;
         }
         if (computerSelection === "scissors") {
-            theResult.textContent = "You Lose!";
             return ++computerPoints;
+            theResult.textContent = `You Lose! You:${playerPoints}, PC:${computerPoints}`;
         }
         if (computerSelection === playerSelection) {
             theResult.textContent = "It's a tie";
         }
     }
 
+}
+if (playerPoints >= 5 && playerPoints > computerPoints) {
+    theResult.textContent = "Congrats!";
+} 
+if (computerPoints >= 5 && computerPoints > playerPoints) {
+    theResult.textContent = "Try Again!";
 }
 
 
