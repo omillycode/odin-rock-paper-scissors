@@ -46,7 +46,6 @@ function playRound(playerSelection, computerSelection) {
         if (computerSelection === playerSelection) {
             theResult.textContent = "It's a tie";
         }
-        gameTracker.textContent = `You:${playerPoints}, PC:${computerPoints}`;
     }
     if (playerSelection === "scissors") {
         if (computerSelection === "paper") {
@@ -60,7 +59,6 @@ function playRound(playerSelection, computerSelection) {
         if (computerSelection === playerSelection) {
             theResult.textContent = "It's a tie";
         }
-        gameTracker.textContent = `You:${playerPoints}, PC:${computerPoints}`;
     }
     if (playerSelection === "paper") {
         if (computerSelection === "rock") {
@@ -74,18 +72,11 @@ function playRound(playerSelection, computerSelection) {
         if (computerSelection === playerSelection) {
             theResult.textContent = "It's a tie";
         }
-        gameTracker.textContent = `You:${playerPoints}, PC:${computerPoints}`;
     }
-    
+    if (playerPoints >= 5 && computerPoints <= 5) {
+        return theResult.textContent = "You've Won The Game!";
+    } else if (playerPoints <= 5 && computerPoints >= 5) {
+        return theResult.textContent = "You've Lost The Game! Please try again";
+    }
 }
-if (playerPoints > computerPoints && playerPoints >= 5) {
-    playerPoints = 0;
-    computerPoints = 0;
-    theResult.textContent = "Congrats, you've won!";
-} else if (computerPoints > playerPoints && computerPoints >= 5) {
-    playerPoints = 0;
-    computerPoints = 0;
-    theResult.textContent = "Sorry, please try again!";
-}
-
 
